@@ -1,51 +1,32 @@
 using System;
 
-public static double? Calculate(int first, int second, string operation)
+public static class Calculator{
+    public static double? Calculate(int first, int second, string operation)
     {
-        double? result = null;
-
-        switch (operation)
-        {
+        switch(operation){
             case "+":
-                result = first + second;
-                break;
-
+                return (first + second);
             case "-":
-                result = first - second;
-                break;
-
+                return (first - second);
             case "*":
-                result = first * second;
-                break;
-
+                return (first * second);
             case "/":
-                if (second == 0)
-                {
-                    Console.WriteLine("Cannot divide by zero");
+                if (second == 0){
+                    Console.WriteLine("\nCannot modulo by zero");
                     return null;
                 }
-                result = (double)first / second;  // Cast to double to avoid integer division
-                break;
-
+                return ((double)first / second);
             case "%":
-                if (second == 0)
-                {
-                    Console.WriteLine("Cannot divide by zero");
+                if (second == 0){
+                    Console.WriteLine("\nCannot modulo by zero");
                     return null;
                 }
-                result = first % second;
-                break;
-
-            case "=":
-                // Program termination handled in Main
-                break;
-
+                return (first % second);
             default:
-                Console.WriteLine("Incorrect Operation Used, please try again");
-                break;
+                return null;
         }
-
-        return result;
+    
     }
+}
 }
 
